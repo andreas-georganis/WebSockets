@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "uEqwYQqH+B+o7BTpZi5V7XU8qsIJhpeyETqkqkyBLOOJ8Xp/fB6FvbebZhDtZ8l6iezA/VXp96ATMKzEMDUO2g==",
+  "success": true,
+  "projectFilePath": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/ConsoleApp/ConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "/home/andreas/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/andreas/.nuget/packages/system.reactive/4.4.1/system.reactive.4.4.1.nupkg.sha512",
+    "/home/andreas/.nuget/packages/system.threading.tasks.dataflow/4.11.0/system.threading.tasks.dataflow.4.11.0.nupkg.sha512"
+  ],
+  "logs": []
+}

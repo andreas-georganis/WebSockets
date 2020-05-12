@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "/U8MRXaI48x1YpJT4fOHVa/KCSTE2vWw7dLu21IJF7d9fwXqfZGXU/Gw0EgzBnKQIE72pHDqZJPI2W2c4fEjUg==",
+  "success": true,
+  "projectFilePath": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/Implementation/Implementation.csproj",
+  "expectedPackageFiles": [
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "/home/andreas/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/andreas/.nuget/packages/system.reactive/4.4.1/system.reactive.4.4.1.nupkg.sha512",
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
+    "/home/andreas/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.3/system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "/home/andreas/.nuget/packages/system.runtime.interopservices.windowsruntime/4.3.0/system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
+    "/home/andreas/.nuget/packages/system.threading.tasks.dataflow/4.11.0/system.threading.tasks.dataflow.4.11.0.nupkg.sha512",
+    "/home/andreas/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
+  "logs": []
+}

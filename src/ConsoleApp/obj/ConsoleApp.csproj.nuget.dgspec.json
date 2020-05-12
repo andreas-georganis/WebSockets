@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/ConsoleApp/ConsoleApp.csproj": {}
+  },
+  "projects": {
+    "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/ConsoleApp/ConsoleApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/ConsoleApp/ConsoleApp.csproj",
+        "projectName": "ConsoleApp",
+        "projectPath": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/ConsoleApp/ConsoleApp.csproj",
+        "packagesPath": "/home/andreas/.nuget/packages/",
+        "outputPath": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/ConsoleApp/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/andreas/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/Implementation/Implementation.csproj": {
+                "projectPath": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/Implementation/Implementation.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/Implementation/Implementation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/Implementation/Implementation.csproj",
+        "projectName": "Implementation",
+        "projectPath": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/Implementation/Implementation.csproj",
+        "packagesPath": "/home/andreas/.nuget/packages/",
+        "outputPath": "/home/andreas/Projects/GitHub/Repositories/WebSockets/src/Implementation/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/andreas/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[4.4.1, )"
+            },
+            "System.Threading.Tasks.Dataflow": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
