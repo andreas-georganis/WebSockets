@@ -143,11 +143,11 @@ namespace WebSockets.Server
             {
                 if (wse.WebSocketErrorCode == WebSocketError.ConnectionClosedPrematurely)
                 {
-                    Console.WriteLine("Client connection closed prematurely");
+                    System.Diagnostics.Debug.WriteLine("Client connection closed prematurely");
                 }
                 else if (wse.WebSocketErrorCode == WebSocketError.InvalidState)
                 {
-                    Console.WriteLine("Invalid WebSocket state");
+                    System.Diagnostics.Debug.WriteLine("Invalid WebSocket state");
                 }
             }
             
