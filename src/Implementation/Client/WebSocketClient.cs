@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 namespace WebSockets.Client
 {
     using Abstractions;
-    public class WebSocketClient : IWebSocketClient
+    public sealed class WebSocketClient : IWebSocketClient
     {
         private const int SendChunkSize = 1024;
         private const int ReceiveChunkSize = 1024;
@@ -33,12 +33,10 @@ namespace WebSockets.Client
 
         private Task _receiverTask;
 
-        private bool _disposed;
-
         public WebSocketClient(Uri uri)
         {
             Uri = uri;
-            _webSocketClientFactory = InitializeWebSocketClient;
+            _webSocketClientFactory = NewWebSocketClient;
         }
 
         public Uri Uri { get; }
@@ -94,6 +92,16 @@ namespace WebSockets.Client
 
         public async Task Close(CancellationToken cancellationToken = default)
         {
+            if (_webSocketClient == null)
+            {
+                return;
+            }
+
+            if (_webSocketClient.State != WebSocketState.Open && _webSocketClient.State != WebSocketState.CloseReceived)
+            {
+                return;
+            }
+
             await _webSocketClient.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, "Closing", cancellationToken);
 
             // wait until connection is closed
@@ -104,18 +112,13 @@ namespace WebSockets.Client
 
         public async ValueTask DisposeAsync()
         {
-            if (_disposed)
-            {
-                return;
-            }
-
             await Close();
             _webSocketClient?.Abort();
             _webSocketClient?.Dispose();
-            _disposed = true;
+            _webSocketClient = null;
         }
 
-        private async Task<ClientWebSocket> InitializeWebSocketClient(Uri uri, CancellationToken cancellationToken = default)
+        private async Task<ClientWebSocket> NewWebSocketClient(Uri uri, CancellationToken cancellationToken = default)
         {
             var webSocketClient = new ClientWebSocket();
             await webSocketClient.ConnectAsync(uri, cancellationToken);
@@ -141,10 +144,6 @@ namespace WebSockets.Client
                         _messageReceivedSubject.OnNext(messageBody.ToArray());
                     }
                 }
-            }
-            catch(TaskCanceledException)
-            {
-                // ignore
             }
             catch(OperationCanceledException)
             {
@@ -174,6 +173,7 @@ namespace WebSockets.Client
                 do
                 {
                     result = await _webSocketClient.ReceiveAsync(buffer, cancellationToken);
+                    
                     bytes.AddRange(new ArraySegment<byte>(buffer.Array, 0, result.Count));
                 }
                 while (!result.EndOfMessage);

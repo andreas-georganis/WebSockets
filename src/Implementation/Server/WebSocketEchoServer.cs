@@ -52,7 +52,7 @@ namespace WebSockets.Server
 
         public async Task Start(CancellationToken cancellationToken = default)
         {
-            var linkedSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, _cts.Token);
+            using var linkedSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, _cts.Token);
             linkedSource.Token.Register(()=> _tcpListener.Stop());
 
             _tcpListener.Start();

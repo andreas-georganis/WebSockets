@@ -16,9 +16,7 @@ namespace ConsoleApp
             var server = new WebSocketEchoServer(8888);
 
             var cts = new CancellationTokenSource();
-             cts.CancelAfter(TimeSpan.FromMinutes(1));
-
-            Task.Run(()=> server.Start(cts.Token), cts.Token);
+             cts.CancelAfter(TimeSpan.FromSeconds(30));
 
             var client = new WebSocketClient(new Uri("ws://localhost:8888"));
 
@@ -27,7 +25,11 @@ namespace ConsoleApp
             client.ErrorOccured.Subscribe(OnErrorOccured);
             client.ConnectionClosed.Subscribe(OnConnectionClosed);
 
-            await client.Connect();
+            var cts2 = new CancellationTokenSource();
+            cts2.CancelAfter(TimeSpan.FromSeconds(20));
+
+            await Task.WhenAll(server.Start(cts.Token), client.Connect(cts2.Token));
+            await client.DisposeAsync();
 
             Console.Read();
         }
