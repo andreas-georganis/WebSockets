@@ -106,13 +106,16 @@ namespace WebSockets.Client
 
             // wait until connection is closed
             while (_webSocketClient.State !=  WebSocketState.Closed);
-
-            _cancellationTokenSource.Cancel();
         }
 
         public async ValueTask DisposeAsync()
         {
             await Close();
+
+            _cancellationTokenSource?.Cancel();
+            _cancellationTokenSource?.Dispose();
+            _cancellationTokenSource = null;
+            
             _webSocketClient?.Abort();
             _webSocketClient?.Dispose();
             _webSocketClient = null;
